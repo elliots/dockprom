@@ -77,7 +77,9 @@ services:
       - /var/run:/var/run:rw
       - /sys:/sys:ro
       - /var/lib/docker/:/var/lib/docker:ro
+      - /cgroup:/sys/fs/cgroup:ro
     restart: unless-stopped
+    privileged: true
     expose:
       - 8080
     networks:
